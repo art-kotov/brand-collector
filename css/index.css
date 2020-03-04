@@ -787,6 +787,12 @@ main section:not(:first-child) {
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .footer__menu {
   display: flex;
   justify-content: space-between;
@@ -795,6 +801,7 @@ main section:not(:first-child) {
 }
 .footer__address {
   color: white;
+  width: 100%;
 }
 .footer__address address {
   display: inline-block;
