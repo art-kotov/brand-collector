@@ -514,7 +514,7 @@ main section:not(:first-child) {
 
 .second {
   display: grid;
-  grid-template-columns: 1fr 400px 130px 400px 1fr;
+  grid-template-columns: 9.72% 34.72% 11.12% 34.72% 9.72%;
   grid-template-rows: 170px 1fr;
 }
 .second__item {
@@ -529,6 +529,11 @@ main section:not(:first-child) {
 .second__item:last-child {
   grid-area: 2/4/4/5;
 }
+.second__item img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
 .second__item h2 {
   font-family: "GT Sectra Display", serif;
   font-size: 22px;
@@ -537,6 +542,7 @@ main section:not(:first-child) {
   color: #000;
 }
 .second__item p {
+  max-width: 312px;
   font-family: Roboto, sans-serif;
   font-size: 13px;
   line-height: 24px;
@@ -548,7 +554,7 @@ main section:not(:first-child) {
 .about {
   display: grid;
   align-items: center;
-  grid-template-columns: 456px 64px 120px 512px;
+  grid-template-columns: 39.58% 5.55% 10.4% 44.47%;
   grid-template-rows: 71px 520px 310px 1fr 1fr;
 }
 .about__more {
