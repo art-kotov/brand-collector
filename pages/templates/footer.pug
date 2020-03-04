@@ -1,17 +1,36 @@
 footer.footer
-  section.footer__top.wrapper.wrapper--with-padding
+  div.footer__top.wrapper.wrapper--size-small
     h2 You are a professional and you want to sell on our network?
     a.btn.btn--color-gray CONTACT US
-  section.footer__bottom.wrapper.wrapper--with-padding
-    div
+  div.footer__bottom.wrapper.wrapper--size-small
+    div.footer__menu
       h2 The Brand Collector
-      p |46/48, rue René Clair
-        |75018 Paris
+      nav.second-nav__wrapper
+          ul.second-nav
+            li.second-nav__item
+              a.second-nav__link(href="") ABOUT US
+            li.second-nav__item
+              a.second-nav__link(href="") CONTACT US
+            li.second-nav__item
+              a.second-nav__link(href="") FAQ
+            li.second-nav__item
+              a.second-nav__link(href="") SHIPPING
+            li.second-nav__item
+              a.second-nav__link(href="") RETURNS
+    div.footer__address
+      p
+        | 46-48 Rue René Clair
+        br
+        | 75018 Paris
       address
         a(href="mailto:hello@thebrandcollector.com") hello@thebrandcollector.com
       a(href="tel:+33666615553") (+33) 6 66 61 55 53
-      a.social(href="")
-
-      a.cosial(href="")
-
-    div
+      div.footer__social
+        a.social-link(href="")
+          img(src="../images/icon-insta.svg")
+        a.social-link(href="")
+          img(src="../images/icon-facebook.svg")
+    div.footer__copyright
+      p © 2020, The Brand Collector All rights reserved.
+        a(href="") Privacy
+        a(href="") Terms
