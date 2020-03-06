@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h2, p, ul {
+  margin: 0;
+}
+
 .btn {
   font-family: Roboto, sans-serif;
   font-size: 13px;
@@ -230,7 +234,7 @@ main section:not(:first-child) {
     img {
       display: block;
       max-width: 100%;
-      object-fit: contain;
+      height: auto;
     }
     h2 {
       font-family: 'GT Sectra Display', serif;
@@ -266,7 +270,7 @@ main section:not(:first-child) {
     z-index: 1;
 
     box-sizing: border-box;
-    padding: 80px 64px;
+    padding: 60px 64px;
 
     background-color: #fff5f0;
 
@@ -336,6 +340,33 @@ main section:not(:first-child) {
 
     color: #777;
   }
+  @media screen and (max-width: 1000px){
+    h2 {
+      font-size: 26px;
+    }
+    &__more {
+      padding: 60px 32px;
+    }
+    &__image {
+      grid-area: 1/2/4/-1;
+    }
+    .quality {
+      padding: 64px 32px;
+
+      grid-area: 3/1/4/2;
+    }
+    .authenticity {
+      margin-left: 17%; // 240px
+      grid-area: 4/1/5/4;
+    }
+    .time {
+      margin-left: 27%; // 370px
+    }
+    .btn-wrapper {
+      margin-left: 10%;
+      grid-area: 5/4/-1/-1;
+    }
+  }
 }
 .coming-soon {
   display: grid;
@@ -347,7 +378,7 @@ main section:not(:first-child) {
     z-index: 1;
     align-self: start;
     box-sizing: border-box;
-    padding: 44px 64px 60px 64px;
+    padding: 44px 64px 60px;
 
     background-color: #fff7e7;
 
@@ -404,6 +435,14 @@ main section:not(:first-child) {
 
     color: #b2a282;
   }
+  @media screen and (max-width: 1000px){
+    h2 {
+      font-size: 26px;
+    }
+    &__more {
+      padding: 44px 32px 60px;
+    }
+  }
 }
 .team {
   display: grid;
@@ -440,7 +479,7 @@ main section:not(:first-child) {
     img {
       display: block;
       max-width: 100%;
-      object-fit: contain;
+      height: auto;
     }
     h3 {
       font-family: 'GT Sectra Display', serif;
@@ -546,6 +585,14 @@ main section:not(:first-child) {
       color: #000;
     }
   }
+  @media screen and (max-width: 1000px){
+    h2 {
+      font-size: 26px;
+    }
+    &__more {
+      padding: 32px;
+    }
+  }
 }
 .contact {
   text-align: center;
@@ -573,18 +620,19 @@ main section:not(:first-child) {
 }
 .footer {
   background-color: #040404;
-  padding-bottom: 48px;
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255, 0.3);
+    padding: 40px 0;
   }
   &__bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 48px 0;
   }
   &__menu {
     display: flex;
@@ -647,10 +695,40 @@ main section:not(:first-child) {
     line-height: 40px;
     color: #FFFFFF;
   }
+  @media screen and (max-width: 1000px){
+    h2 {
+      font-size: 22px;
+    }
+  }
+  @media screen and (max-width: 820px){
+    &__top {
+      flex-direction: column;
+      padding-bottom: 40px;
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+    }
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__menu {
+      flex-direction: column-reverse;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+    &__social {
+      margin-bottom: 40px;
+    }
+    &__copyright {
+      align-self: center;
+    }
+  }
 }
 .second-nav {
   display: flex;
-
+  padding: 0;
   &__wrapper {
   }
 
@@ -668,5 +746,11 @@ main section:not(:first-child) {
     text-decoration: none;
     letter-spacing: 2px;
     color: white;
+  }
+  @media screen and (max-width: 820px){
+    flex-wrap: wrap;
+    &__item {
+      margin-bottom: 20px;
+    }
   }
 }
