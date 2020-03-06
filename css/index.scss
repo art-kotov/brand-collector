@@ -13,6 +13,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0 30px;
   min-width: 312px;
   height: 56px;
 
@@ -84,6 +85,9 @@ body {
       box-shadow: inset 0 0 80px 0 rgba(255, 255, 255, 0.05);
     }
   }
+  @media screen and (max-width: 1100px){
+    min-width: 200px;
+  }
 }
 
 .wrapper {
@@ -91,7 +95,13 @@ body {
   margin: auto;
   box-sizing: border-box;
   &--with-padding {
-    padding: 0 60px;
+    padding: 0 64px;
+    @media screen and (max-width: 1279px) {
+      padding: 0 48px;
+    }
+    @media screen and (max-width: 1023px) {
+      padding: 0 32px;
+    }
   }
   &--size-small {
     max-width: 1152px;
@@ -330,18 +340,18 @@ main section:not(:first-child) {
 .coming-soon {
   display: grid;
 
-  grid-template-columns: 632px 168px 352px;
+  grid-template-columns: 54.86% 14.59% 30.55%;
   grid-template-rows: 138px 437px 163px 1fr;
 
   &__more {
     z-index: 1;
-
+    align-self: start;
     box-sizing: border-box;
     padding: 44px 64px 60px 64px;
 
     background-color: #fff7e7;
 
-    grid-area: 1/2/3/-1;
+    grid-area: 1/2/4/-1;
   }
 
   &__header {
@@ -398,7 +408,7 @@ main section:not(:first-child) {
 .team {
   display: grid;
 
-  grid-template-columns: 112px 206px 194px 128px 400px 1fr;
+  grid-template-columns: 9.72% 17.88% 16.84% 11.11% 34.72% 9.73%;
   grid-template-rows: 100px 129px 438px 279px auto auto;
 
   &__more {
@@ -427,7 +437,11 @@ main section:not(:first-child) {
     z-index: 1;
 
     margin: 0;
-
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: contain;
+    }
     h3 {
       font-family: 'GT Sectra Display', serif;
       font-size: 22px;
