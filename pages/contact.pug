@@ -1,0 +1,18 @@
+html
+  include templates/head
+  body
+    include templates/header-logged
+    main.wrapper.wrapper--with-padding.contact-us
+      h1 CONTACT US
+      p The Brand Collector aims at providing the best quality for our customers. Please tell us your thoughts if you have any questions. We will reply you as soon as possible.
+      p.email-link Email Us -
+        a(href="") email@thebrand.co
+      p Or write down your opinions in the following form. We will answer your questions within 24 hours.
+      form
+        input(type="text" placeholder="YOUR NAME")
+        input(type="text" placeholder="YOUR EMAIL")
+        input(type="text" placeholder="YOUR PHONE (OPTIONAL)")
+        textarea(placeholder="YOUR MESSAGE")
+        button.btn.btn--form-btn(type="submit") SEND MESSAGE
+    include templates/footer
+

@@ -1,0 +1,28 @@
+html
+  include templates/head
+  body
+    include templates/header
+    main.wrapper.wrapper--with-padding.join-us
+      h1 JOIN US
+      p and access to the world’s largest  second-hand luxury B2B marketplace
+      form
+        fieldset
+          legend Your company
+          input.input--error(type="text" placeholder="COMPANY NAME")
+          input.input--error(type="text" placeholder="ADDRESS")
+          input.input--error.input--zip(type="text" placeholder="ZIP CODE")
+          input.input--city(type="text" placeholder="CITY")
+          input(type="text" placeholder="COUNTRY")
+          input.input--error(type="file" id="file")
+          label(for="file") ATTACHED FILE (KBIS...)
+        fieldset
+          legend You
+          input(type="text" placeholder="FIRST NAME")
+          input(type="text" placeholder="LAST NAME")
+          input(type="text" placeholder="EMAIL")
+          input(type="text" placeholder="PHONE NUMBER")
+          button.btn.btn--form-btn(type="submit") REGISTER
+      p Already a member?
+      a(href="") LOG IN
+    include templates/footer
+
