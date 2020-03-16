@@ -354,6 +354,7 @@ template {
   src: url("../fonts/GT-Sectra-Display-Regular.woff2") format("woff2"), url("../fonts/GT-Sectra-Display-Regular.woff") format("woff"), url("../fonts/GT-Sectra-Display-Regular.eot") format("eot"), url("../fonts/GT-Sectra-Display-Regular.otf") format("otf"), url("../fonts/GT-Sectra-Display-Regular.ttf") format("ttf");
 }
 body {
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
 
@@ -400,6 +401,10 @@ textarea:hover {
 }
 textarea:focus {
   border: 1px solid #555555;
+}
+
+.type--visible {
+  display: block !important;
 }
 
 .dropdown {
@@ -1356,39 +1361,16 @@ main section:not(:first-child) {
   padding: 0;
   color: #BF8E78;
 }
-.cart-dropdown {
-  position: absolute;
-  right: 0;
-  top: calc(100% - 2px);
-  width: 424px;
-  min-height: calc(100vh - 80px);
+.cart {
   box-sizing: border-box;
-  border: 1px solid #ddd;
   background-color: white;
 }
-.cart-dropdown__header {
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  box-shadow: inset 0px -1px 0px #E8E8E8;
+.cart__body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-.cart-dropdown__header span:first-child {
-  font-family: GT Sectra Display, serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 25px;
-  /* identical to box height, or 114% */
-  letter-spacing: 2px;
-  color: #040404;
-}
-.cart-dropdown__body {
-  padding: 0 24px;
-  margin: 32px 0 80px;
-}
-.cart-dropdown__item {
+.cart__item {
   display: flex;
   align-items: center;
   padding: 20px 20px 16px;
@@ -1396,24 +1378,24 @@ main section:not(:first-child) {
   margin-bottom: 6px;
   box-sizing: border-box;
 }
-.cart-dropdown__item img {
+.cart__item img {
   mix-blend-mode: darken;
   margin-right: 20px;
 }
-.cart-dropdown__item span {
+.cart__item span {
   display: block;
 }
-.cart-dropdown__item div {
+.cart__item div {
   height: 100%;
 }
-.cart-dropdown__item > div:last-child {
+.cart__item > div:last-child {
   align-self: flex-end;
   margin-left: auto;
 }
-.cart-dropdown__item > div:last-child span {
+.cart__item > div:last-child span {
   cursor: pointer;
 }
-.cart-dropdown__brand {
+.cart__brand {
   margin-bottom: 8px;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -1424,7 +1406,7 @@ main section:not(:first-child) {
   letter-spacing: 2px;
   color: #000000;
 }
-.cart-dropdown__name {
+.cart__name {
   margin-bottom: 12px;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -1434,7 +1416,7 @@ main section:not(:first-child) {
   /* identical to box height, or 22px */
   color: #000000;
 }
-.cart-dropdown__cost {
+.cart__cost {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1444,7 +1426,7 @@ main section:not(:first-child) {
   letter-spacing: 2px;
   color: #000000;
 }
-.cart-dropdown__item-delete {
+.cart__item-delete {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1454,17 +1436,97 @@ main section:not(:first-child) {
   letter-spacing: 2px;
   color: #777777;
 }
-.cart-dropdown__calculation {
+
+.side-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px auto 1fr;
+  width: 424px;
+  height: 100vh;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: all 0.14s ease-out;
+}
+.side-panel__wrapper {
+  display: contents;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.24s ease-out;
+}
+.side-panel__header {
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: inset 0px -1px 0px #E8E8E8;
+}
+.side-panel__header span:first-child {
+  font-family: GT Sectra Display, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  color: #040404;
+}
+.side-panel__close-btn {
+  position: relative;
+  display: block;
+  height: 18px;
+  width: 18px;
+}
+.side-panel__close-btn:after, .side-panel__close-btn:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+}
+.side-panel__close-btn:before {
+  top: 0;
+  transform: rotate(45deg) translate(1px, -1px);
+  transform-origin: 0 0;
+}
+.side-panel__close-btn:after {
+  bottom: 0;
+  transform: rotate(-45deg) translate(1px, 1px);
+  transform-origin: 0 100%;
+}
+.side-panel__body {
+  margin-top: 32px;
+  padding: 0 24px;
+  height: 100%;
+  overflow: hidden;
+}
+.side-panel__footer {
+  margin-top: 80px;
+  margin-bottom: 24px;
+  align-self: end;
+}
+.side-panel__calculation {
   padding: 0 24px 5px 24px;
   margin-bottom: 15px;
   box-shadow: inset 0px -1px 0px #E8E8E8;
 }
-.cart-dropdown__calculation-item {
+.side-panel__calculation-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.cart-dropdown__calculation-item span {
+.side-panel__calculation-item span {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1475,17 +1537,17 @@ main section:not(:first-child) {
   text-transform: uppercase;
   color: #777777;
 }
-.cart-dropdown__calculation-item span:last-child {
+.side-panel__calculation-item span:last-child {
   color: black;
 }
-.cart-dropdown__total {
+.side-panel__total {
   padding: 0 24px;
   margin-bottom: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.cart-dropdown__total span {
+.side-panel__total span {
   font-family: GT Sectra Display, serif;
   font-style: normal;
   font-weight: normal;
@@ -1496,7 +1558,7 @@ main section:not(:first-child) {
   text-transform: uppercase;
   color: #000000;
 }
-.cart-dropdown__total span:last-child {
+.side-panel__total span:last-child {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1507,10 +1569,17 @@ main section:not(:first-child) {
   letter-spacing: 2px;
   color: #000000;
 }
-.cart-dropdown .btn {
+.side-panel .btn {
   max-width: calc(100% - 48px);
   margin: 0 24px;
   box-sizing: border-box;
+}
+
+.type--visible.side-panel__wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.type--visible .side-panel {
+  transform: translateX(0);
 }
 
 /*# sourceMappingURL=index.css.map */
