@@ -251,6 +251,32 @@ textarea {
     }
   }
 }
+.close-btn {
+  position: relative;
+  display: block;
+  height: 18px;
+  width: 18px;
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: #000;
+  }
+
+  &:before {
+    top: 0;
+    transform: rotate(45deg) translate(1px, -1px);
+    transform-origin: 0 0;
+  }
+  &:after{
+    bottom: 0;
+    transform: rotate(-45deg) translate(1px, 1px);
+    transform-origin: 0 100%;
+  }
+}
 
 .wrapper {
   max-width: 1280px;
@@ -285,7 +311,53 @@ textarea {
 
     height: 100%;
   }
+  &__search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 480px;
+    width: 17px;
+    height: 100%;
+    margin: 0 10px;
+    overflow: hidden;
 
+    img {
+      z-index: 2;
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-left: 30px;
+      border: none;
+      border-bottom: 1px solid #e8e8e8;
+      z-index: 1;
+
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height, or 123% */
+
+      letter-spacing: 2px;
+
+      color: #000000;
+
+    }
+    .close-btn {
+      z-index: 2;
+    }
+    &.type--visible {
+      width: 100%;
+      input{
+
+      }
+    }
+  }
   &__btn {
     display: flex;
     justify-content: center;
@@ -310,11 +382,6 @@ textarea {
 
 .main-nav {
   display: flex;
-
-  &__wrapper {
-    margin-right: auto;
-  }
-
   &__item {
     list-style: none;
 
@@ -1151,7 +1218,6 @@ main section:not(:first-child) {
   }
 }
 
-
 // PROFILE DROPDOWN
 .profile-dropdown {
   padding: 24px 24px 0;
@@ -1386,6 +1452,7 @@ main section:not(:first-child) {
     max-height: 100vh;
     background-color: rgba(0,0,0,0);
     transition: all 0.24s ease-out;
+    z-index: 999;
   }
   &__header {
     padding: 0 24px;
@@ -1403,32 +1470,6 @@ main section:not(:first-child) {
       letter-spacing: 2px;
 
       color: #040404;
-    }
-  }
-  &__close-btn {
-    position: relative;
-    display: block;
-    height: 18px;
-    width: 18px;
-    &:after, &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      display: block;
-      width: 24px;
-      height: 1px;
-      background-color: #000;
-    }
-
-    &:before {
-      top: 0;
-      transform: rotate(45deg) translate(1px, -1px);
-      transform-origin: 0 0;
-    }
-    &:after{
-      bottom: 0;
-      transform: rotate(-45deg) translate(1px, 1px);
-      transform-origin: 0 100%;
     }
   }
   &__body {

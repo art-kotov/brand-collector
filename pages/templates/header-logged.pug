@@ -7,33 +7,36 @@ header.header
             a.main-nav__link(href="") CATALOG
           li.main-nav__item
             a.main-nav__link(href="") AUCTIONS
-          img(src="../images/search.svg")
-      a.header__btn(href="") WISHLIST
-      div.dropdown
-        button.header__btn.profile-btn PROFILE
-          svg(class="svg-1" style="margin-left: 5px;width:10px; height: 6px;")
-            path(
-              d="M1,1 L5,5 L9,1"
-              style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; transition: 0.14s;"
-              )
-        div.dropdown__body.profile-dropdown
-          h3.profile-dropdown__name Mathieu Grac
-          a.profile-dropdown__email(href="") mathieugrac@gmail.com
-          .profile-dropdown__credit
-            div AUCTION CREDIT
-            div $ 1,000.00
-          ul.profile-dropdown__menu
-            li
-              a(href="") MY ORDERS
-            li
-              a(href="") PAYMENT METHODS
-            li
-              a(href="") ADDRESSES
-            li
-              a(href="") ACCOUNT
-            li
-              button.header__btn LOG OUT
-      img.side-panel__open(src="../images/Bag.svg")
+      div.header__search
+        img.search-icon(src="../images/search.svg")
+        input(type="search" placeholder="Search...")
+        .close-btn
+      a.header__btn(href="" style="margin-left: auto") WISHLIST
+          div.dropdown
+            button.header__btn.profile-btn PROFILE
+              svg(class="svg-1" style="margin-left: 5px;width:10px; height: 6px;")
+                path(
+                  d="M1,1 L5,5 L9,1"
+                  style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; transition: 0.14s;"
+                  )
+            div.dropdown__body.profile-dropdown
+              h3.profile-dropdown__name Mathieu Grac
+              a.profile-dropdown__email(href="") mathieugrac@gmail.com
+              .profile-dropdown__credit
+                div AUCTION CREDIT
+                div $ 1,000.00
+              ul.profile-dropdown__menu
+                li
+                  a(href="") MY ORDERS
+                li
+                  a(href="") PAYMENT METHODS
+                li
+                  a(href="") ADDRESSES
+                li
+                  a(href="") ACCOUNT
+                li
+                  button.header__btn LOG OUT
+          img.side-panel__open(src="../images/Bag.svg")
 
 //<svg viewBox="0 0 10 10" class="svg-1">
 //<path d="M2,2 L3,7 L8,8" />
