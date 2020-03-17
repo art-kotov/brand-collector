@@ -3,21 +3,29 @@ const sideOpen = document.querySelectorAll('.side-panel__open');
 const sideClose = document.querySelector('.side-panel__close-btn');
 
 const searchIcon = document.querySelector(".search-icon");
-const search = document.querySelector(".header__search");
+const search = document.querySelector(".search");
+const searchClose = document.querySelector(".search-close");
 
 sideOpen.forEach(item => {
     item.addEventListener('click', () => {
-        console.log('toggle')
+        console.log('toggle');
         sidePanel.classList.toggle("type--visible")
     })
 });
 
 sideClose.addEventListener('click', () => {
-    console.log('toggle')
+    console.log('toggle');
     sidePanel.classList.toggle("type--visible")
 });
 
 searchIcon.addEventListener("click", () => {
-    console.log('search')
-    search.classList.add("type--visible")
-})
+    console.log('search');
+    search.classList.add("type--visible");
+    search.querySelector("input").focus()
+});
+
+searchClose.addEventListener("click", () => {
+    console.log('search close');
+    search.classList.remove("type--visible");
+    search.querySelector("input").value = ""
+});

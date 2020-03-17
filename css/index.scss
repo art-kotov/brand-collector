@@ -1,8 +1,10 @@
 @import 'normalize';
 @import 'fonts';
 
+html {
+  overflow-x: hidden;
+}
 body {
-  overflow: hidden;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -58,7 +60,7 @@ textarea {
   }
 }
 .type--visible {
-  display: block !important;
+  display: block;
 }
 // DROPDOWN
 .dropdown {
@@ -300,9 +302,8 @@ textarea {
 
 .header {
   height: 80px;
-
   box-shadow: inset 0 -1px 0 #e8e8e8;
-
+  overflow: hidden;
   &__wrapper {
     position: relative;
     display: flex;
@@ -310,53 +311,6 @@ textarea {
     justify-content: space-between;
 
     height: 100%;
-  }
-  &__search {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 480px;
-    width: 17px;
-    height: 100%;
-    margin: 0 10px;
-    overflow: hidden;
-
-    img {
-      z-index: 2;
-    }
-    input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding-left: 30px;
-      border: none;
-      border-bottom: 1px solid #e8e8e8;
-      z-index: 1;
-
-      font-family: Roboto, sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 13px;
-      line-height: 16px;
-      /* identical to box height, or 123% */
-
-      letter-spacing: 2px;
-
-      color: #000000;
-
-    }
-    .close-btn {
-      z-index: 2;
-    }
-    &.type--visible {
-      width: 100%;
-      input{
-
-      }
-    }
   }
   &__btn {
     display: flex;
@@ -1437,17 +1391,16 @@ main section:not(:first-child) {
   grid-template-rows: 80px auto 1fr;
   width: 424px;
   height: 100vh;
-  border: 1px solid #ddd;
   background-color: #fff;
   box-sizing: border-box;
   transform: translateX(100%);
   transition: all 0.14s ease-out;
   &__wrapper {
-    display: contents;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     max-height: 100vh;
     background-color: rgba(0,0,0,0);
@@ -1553,9 +1506,70 @@ main section:not(:first-child) {
 
 .type--visible {
   &.side-panel__wrapper {
+    visibility: visible;
     background-color: rgba(0,0,0,0.5);
   }
   .side-panel {
     transform: translateX(0);
+  }
+}
+
+// SEARCH
+.search {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+  max-width: 480px;
+  width: 17px;
+  height: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  transition: all 0.24s linear;
+  &-icon {
+  }
+  input {
+    height: 100%;
+    width: calc(100% - 17px);
+    padding: 0;
+    margin: 0 20px;
+    border: none;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+
+    letter-spacing: 2px;
+
+    color: #000000;
+
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+  .close-btn {
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all 0s 0.24s linear;
+  }
+  &.type--visible {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #000;
+    .close-btn {
+      visibility: visible;
+    }
   }
 }
