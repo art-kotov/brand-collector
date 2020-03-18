@@ -1862,7 +1862,11 @@ main section:not(:first-child) {
   line-height: 25px;
   color: #040404;
 }
-.products__header span:nth-child(3) {
+.products__header .arrow-long {
+  display: block;
+  width: 25px;
+  height: 9px;
+  background-image: url("../images/arrow-long.svg");
   margin-left: auto;
 }
 .products__body {

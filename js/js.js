@@ -24,7 +24,9 @@ sideClose.addEventListener('click', () => {
 searchIcon.addEventListener("click", () => {
     console.log('search');
     search.classList.add("type--visible");
-    search.querySelector("input").focus()
+    setTimeout(() => {
+        search.querySelector("input").focus()
+    }, 100)
 });
 
 searchClose.addEventListener("click", () => {

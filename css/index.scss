@@ -1794,7 +1794,11 @@ main section:not(:first-child) {
       color: #040404;
     }
 
-    span:nth-child(3) {
+    .arrow-long {
+      display: block;
+      width: 25px;
+      height: 9px;
+      background-image: url("../images/arrow-long.svg");
       margin-left: auto;
     }
   }
