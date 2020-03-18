@@ -3,6 +3,9 @@
 
 html {
   overflow-x: hidden;
+  &.type--active {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -20,7 +23,10 @@ p,
 ul {
   margin: 0;
 }
-
+button {
+  padding: 0;
+  margin: 0;
+}
 // FORM
 input {
   font-size: 13px;
@@ -71,6 +77,54 @@ textarea {
 
 .type--visible {
   display: block;
+}
+
+// SVG
+.svg-2 {
+  width: 20px;
+  height: 20px;
+
+  path {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: 0.14s;
+  }
+}
+.svg-3 {
+  width: 32px;
+  height: 20px;
+
+  path {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: 0.14s;
+  }
+}
+// TOGGLE BLOCK
+.toggle-block {
+  &__name {
+    &.type--active {
+      color: #000;
+
+      .svg-2 path {
+        d: path('M20,10 L1,10');
+      }
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+
+    display: none;
+
+    &.type--visible {
+      display: inherit;
+    }
+  }
 }
 
 // DROPDOWN
@@ -273,6 +327,7 @@ textarea {
     appearance: none;
     border: 1px solid #e7e7e7;
     outline: none;
+
     &:hover {
       border: 1px solid #b4b4b4;
     }
@@ -280,6 +335,7 @@ textarea {
     &:focus {
       border: 1px solid #555;
     }
+
     &[disabled] {
       background-color: #f5f5f5;
     }
@@ -429,6 +485,9 @@ textarea {
     @media screen and (max-width: 1023px) {
       padding: 0 32px;
     }
+    @media screen and (max-width: 768px) {
+      padding: 0 16px;
+    }
   }
 
   &--size-small {
@@ -474,11 +533,47 @@ textarea {
     height: 100%;
     margin-left: auto;
   }
+  @media screen and (max-width: 768px) {
+    height: 48px;
+    .menu-burger {
+      margin-right: auto;
+    }
+    &__wrapper {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr 38px 1fr;
+    }
+    &__btn {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+    &__right {
+      a.header__btn {
+        display: none;
+      }
+    }
+  }
+  &.type--active {
+    .header__wrapper {
+      background-color: #FFF5F0;
+    }
+    .main-nav__wrapper {
+      display: flex;
+    }
+    .svg-3 {
+      & path:first-child {
+        d: path('M6,0 L16,10 L26,0');
+      }
+      & path:last-child {
+        d: path('M6,20 L16,10 L26,20');
+      }
+    }
+  }
 }
 
 .main-nav {
   display: flex;
-
   &__item {
     list-style: none;
 
@@ -493,6 +588,58 @@ textarea {
     text-decoration: none;
     letter-spacing: 2px;
     color: #000;
+  }
+  @media screen and (max-width: 768px) {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    &__wrapper {
+      display: none;
+      z-index: 999;
+      position: fixed;
+      top: 47px;
+      left: 0;
+      padding-bottom: 47px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: calc(100% - 47px);
+      background-color: #FFF5F0;
+      box-sizing: border-box;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    }
+    &__link {
+      font-family: GT Sectra Display, serif;
+      font-size: 26px;
+      line-height: 25px;
+
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: #000000;
+      &:before {
+        content: "1";
+        display: block;
+        margin-bottom: 11px;
+
+        font-family: GT Sectra Display, serif;
+        font-size: 13px;
+        line-height: 16px;
+
+        text-align: center;
+
+        color: #000000;
+      }
+    }
   }
 }
 
@@ -1363,9 +1510,15 @@ main section:not(:first-child) {
   &__body {
     overflow-x: hidden;
     overflow-y: auto;
-    //max-height: 400px;
-
+    //margin-right: -60px;
+    //padding-right: 42px;
     height: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
   }
 
   &__item {
@@ -1700,6 +1853,7 @@ main section:not(:first-child) {
   .btn-reset {
     margin-left: 16px;
   }
+
   .styled-select {
     margin-left: auto;
   }
@@ -1737,23 +1891,6 @@ main section:not(:first-child) {
     text-transform: uppercase;
     color: #777;
     user-select: none;
-    &.type--active {
-      color: #000;
-
-      .svg-1 path {
-        d: path('M1,5 L5,1 L9,5');
-      }
-    }
-  }
-
-  &__body {
-    overflow: hidden;
-
-    height: 0;
-
-    &.type--visible {
-      height: auto;
-    }
   }
 
   &__group {
@@ -1817,7 +1954,7 @@ main section:not(:first-child) {
     margin: 0;
     padding: 0;
     grid-template-columns: repeat(auto-fill, minmax(252px, 1fr));
-    grid-template-rows: 252px;
+    grid-template-rows: 1fr;
     grid-gap: 20px;
   }
 }
@@ -1909,4 +2046,108 @@ main section:not(:first-child) {
   color: #000;
   border: 1px solid #e7e7e7;
   background: #fff;
+}
+
+// WISHLIST
+.wishlist {
+  margin-bottom: 120px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 104px;
+    margin-bottom: 30px;
+
+    h1 {
+      font-family: GT Sectra Display, serif;
+      font-size: 30px;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 40px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    span {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 24px;
+
+      color: #777777;
+    }
+  }
+}
+
+.profile {
+  display: grid;
+  align-items: start;
+  margin-bottom: 120px;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 104px auto;
+  grid-gap: 24px 80px;
+
+  &__header {
+    align-self: center;
+
+    h1 {
+      font-family: GT Sectra Display, serif;
+      font-size: 30px;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 40px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #000;
+    }
+  }
+
+  &__menu {
+    grid-area: 2/1/3/2;
+  }
+
+  &__body {
+    grid-area: 1/2/3/-1;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 18px;
+    border-collapse: collapse;
+
+    tr {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #F7F7F7;
+      }
+    }
+
+    td {
+      height: 64px;
+      box-shadow: inset 0px -1px 0px #E8E8E8;
+      box-sizing: border-box;
+
+      font-size: 13px;
+      line-height: 150%;
+
+      text-transform: uppercase;
+
+      color: #777777;
+
+      &:first-child,
+      &:last-child, {
+        font-size: 13px;
+        line-height: 150%;
+        text-transform: uppercase;
+
+        color: #000000;
+      }
+
+      &:last-child {
+        letter-spacing: 2px;
+      }
+    }
+  }
 }

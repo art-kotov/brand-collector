@@ -1,0 +1,72 @@
+html
+  include templates/head
+  body
+    include templates/header-logged
+    .wrapper.wrapper--with-padding.profile
+      .profile__header
+        h1  PROFILE
+      aside.profile__menu
+        h3.profile-dropdown__name Mathieu Grac
+        a.profile-dropdown__email(href="") mathieugrac@gmail.com
+        .profile-dropdown__credit
+          div AUCTION CREDIT
+          div $ 1,000.00
+        ul.profile-dropdown__menu
+          li
+            a(href="") MY ORDERS
+          li
+            a(href="") PAYMENT METHODS
+          li
+            a(href="") ADDRESSES
+          li
+            a(href="") ACCOUNT
+      .profile__body
+        table
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td(width="130") IN PROGRESS
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td DELIVERED
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td DELIVERED
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td DELIVERED
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td IN PROGRESS
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td CANCELLED
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td DELIVERED
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td IN PROGRESS
+          tr
+            td #9999
+            td 07.01.20
+            td &euro;3,058.00
+            td CANCELLED
+    include templates/footer
+    include templates/side-panel
+script(src="../js/js.js")

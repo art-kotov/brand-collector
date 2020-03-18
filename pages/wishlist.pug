@@ -1,0 +1,22 @@
+html
+  include templates/head
+  body
+    include templates/header-logged
+    .wrapper.wrapper--with-padding.wishlist
+      .wishlist__header
+        h1  WISHLIST
+        span 9 items
+      .products
+        ul.products__body
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+    include templates/footer
+    include templates/side-panel
+script(src="../js/js.js")
