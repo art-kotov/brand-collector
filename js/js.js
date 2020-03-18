@@ -6,6 +6,9 @@ const searchIcon = document.querySelector(".search-icon");
 const search = document.querySelector(".search");
 const searchClose = document.querySelector(".search-close");
 
+const filterName = document.querySelectorAll(".filter__name");
+
+
 sideOpen.forEach(item => {
     item.addEventListener('click', () => {
         console.log('toggle');
@@ -28,4 +31,12 @@ searchClose.addEventListener("click", () => {
     console.log('search close');
     search.classList.remove("type--visible");
     search.querySelector("input").value = ""
+});
+
+
+filterName.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle("type--active")
+        item.nextSibling.classList.toggle("type--visible")
+    })
 });

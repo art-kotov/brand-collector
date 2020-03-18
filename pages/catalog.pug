@@ -1,0 +1,188 @@
+html
+  include templates/head
+  body
+    include templates/header-logged
+    .wrapper.wrapper--with-padding.catalog
+      .catalog__header
+        h1  CATALOG
+      .sort
+        span  520 items remaining
+        span.btn.btn-reset  RESET ALL FILTERS
+        .styled-select
+          select
+            option Featured
+            option Newest
+            option Most Popular
+            option Lowest Prices
+            option Highest Prices
+      .filters
+        h2 Filter by
+        .filter
+          .filter__name
+            span GENDER
+            svg(class="svg-1" style="margin-left: 5px;width:10px; height: 6px;")
+              path(
+                d="M1,1 L5,5 L9,1"
+                style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; transition: 0.14s;"
+              )
+          .filter__body
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | CLUTCH
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | HANDBAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHOULDER BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TOTE BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TRAVEL BAGS
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | BELTS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SCARFS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHAWLS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | WALLETS
+        .filter
+          .filter__name
+            span GENDER
+            svg(class="svg-1" style="margin-left: 5px;width:10px; height: 6px;")
+              path(
+                d="M1,1 L5,5 L9,1"
+                style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; transition: 0.14s;"
+              )
+          .filter__body
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | CLUTCH
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | HANDBAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHOULDER BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TOTE BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TRAVEL BAGS
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | BELTS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SCARFS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHAWLS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | WALLETS
+        .filter
+          .filter__name
+            span GENDER
+            svg(class="svg-1" style="margin-left: 5px;width:10px; height: 6px;")
+              path(
+                d="M1,1 L5,5 L9,1"
+                style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; transition: 0.14s;"
+              )
+          .filter__body
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | CLUTCH
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | HANDBAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHOULDER BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TOTE BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | TRAVEL BAGS
+            .filter__group
+              span BAGS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | BELTS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SCARFS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | SHAWLS
+              label.checkbox-container
+                input(type="checkbox")
+                span.checkmark
+                | WALLETS
+        span.btn.btn-reset RESET ALL
+      .products
+        .products__header
+          span AUCTION IN PROGRESS
+          span 04 : 12 : 23 s
+          span ->
+        ul.products__body
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+          include templates/product
+    include templates/footer
+    include templates/side-panel
+script(src="../js/js.js")

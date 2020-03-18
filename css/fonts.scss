@@ -1,32 +1,24 @@
 @font-face
 {
-    font-family: 'Roboto';
-
-    src: local('Roboto Regular'),
+    font-family: 'Roboto';  src: local('Roboto Regular'),
     url('../fonts/Roboto-Regular.ttf') format('ttf');
 }
 
 @font-face
 {
-    font-family: 'Roboto Medium';
-
-    src: local('Roboto Medium'),
+    font-family: 'Roboto Medium';  src: local('Roboto Medium'),
     url('../fonts/Roboto-Medium.ttf') format('ttf');
 }
 
 @font-face
 {
-    font-family: 'Roboto Light';
-
-    src: local('Roboto Light'),
+    font-family: 'Roboto Light';  src: local('Roboto Light'),
     url('../fonts/Roboto-Light.ttf') format('ttf');
 }
 
 @font-face
 {
-    font-family: 'GT Sectra Display';
-
-    src: url('../fonts/GT-Sectra-Display-Regular.woff2') format('woff2'),
+    font-family: 'GT Sectra Display';  src: url('../fonts/GT-Sectra-Display-Regular.woff2') format('woff2'),
     url('../fonts/GT-Sectra-Display-Regular.woff') format('woff'),
     url('../fonts/GT-Sectra-Display-Regular.eot') format('eot'),
     url('../fonts/GT-Sectra-Display-Regular.otf') format('otf'),
